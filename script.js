@@ -1,4 +1,4 @@
-﻿const navbar = document.querySelector(".navbar");
+const navbar = document.querySelector(".navbar");
 const year = document.getElementById("year");
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
@@ -325,34 +325,8 @@ const updateNavbar = () => {
   navbar.classList.toggle("scrolled", window.scrollY > 30);
 };
 
-const initHeroScrollStory = () => {
-  if (prefersReducedMotion || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
-
-  const hero = document.querySelector(".hero");
-  if (!hero) return;
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Pins the hero in place for a short scroll distance, then releases it
-  // quickly so the next section glides up fast and smoothly. Nothing in
-  // the hero fades or zooms - the headline, tagline, and buttons stay
-  // fully visible the whole time.
-  ScrollTrigger.create({
-    trigger: hero,
-    start: "top top",
-    end: "+=250",
-    pin: true,
-    pinSpacing: true,
-    anticipatePin: 1,
-    invalidateOnRefresh: true,
-  });
-
-  window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
-};
-
 updateNavbar();
 window.addEventListener("scroll", updateNavbar, { passive: true });
-initHeroScrollStory();
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
