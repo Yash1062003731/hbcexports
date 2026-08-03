@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yash1062003731.github.io/hbcexports/sitemap.xml
