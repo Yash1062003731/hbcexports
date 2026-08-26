@@ -2406,14 +2406,14 @@ body.zoom-open {
   }
 
   .hero {
-    min-height: 100vh;
+    min-height: 100svh;
     height: auto;
     padding-top: 96px;
-    padding-bottom: 28px;
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .hero-content {
